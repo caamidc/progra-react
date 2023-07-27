@@ -37,3 +37,4 @@ export const Servicios = () => {
     </div>
     )
 }
+export default Servicios;

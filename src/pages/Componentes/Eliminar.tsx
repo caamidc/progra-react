@@ -1,8 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { obtenerEvento, eliminarEvento } from '../Firebase/Promesas';
-import { Evento } from '../Interfaces';
+import { obtenerEvento, eliminarEvento } from '@/Firebase/Promesas';
+import { Evento } from '@/app/Interfaces';
 
 export const Eliminar = () => {
     const params = useParams()
@@ -115,3 +115,5 @@ export const Eliminar = () => {
       )
     
 };
+
+export default Eliminar;

@@ -1,12 +1,11 @@
 'use client'
-import { useParams} from 'react-router-dom'
-import React, {useEffect, useState} from 'react'
-import { obtenerEvento, actualizarEvento} from '../Firebase/Promesas'
-import { Evento } from '../Interfaces'
+import React, { useEffect, useState } from 'react'
+import { Evento } from '@/app/Interfaces';
+import { registrarEvento } from '@/Firebase/Promesas';
+import '../assets/css/Contacto.css';
 
-export const Actualizar = () => {
-    const params = useParams()
-    const [nombre, setNombre] = useState("")
+export const Contacto = () => {
+    const [nombre, setNombre] = useState<string>("");
     const [apellido, setApellido] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [telefono, setTelefono] = useState<string>("");
@@ -14,43 +13,61 @@ export const Actualizar = () => {
     const [fechaEvento, setFechaEvento] = useState<string>("");
     const [metodoContacto, setMetodoContacto] = useState<string>("");
     const [detalles, setDetalles] = useState<string>("");
-    const [idEvento,setIdEvento] = useState("")
-    useEffect(()=>{
-        if(params.idEvento!=undefined){
-            obtenerEvento(params.idEvento).then((e)=>{
-                if(e!=undefined && e.idEvento!= undefined){
-                    setNombre(e.nombre)
-                    setApellido(e.apellido)
-                    setEmail(e.email)
-                    setTelefono(e.telefono)
-                    setTipoEvento(e.tipoEvento)
-                    setFechaEvento(e.fechaEvento)
-                    setMetodoContacto(e.metodoContacto)
-                    setDetalles(e.detalles)
-                    setIdEvento(e.idEvento!)
-                }
-            })//se recupera el objeto en base a un id  
-        }
-    },[params.idEvento])
-   
 
-    const actualizar = () => {
-        const e:Evento={
-            nombre,
-            apellido,
-            email,
-            telefono,
-            tipoEvento,
-            fechaEvento,
-            metodoContacto,
-            detalles
-        };
-        actualizarEvento(idEvento,e).then(()=>{
-            alert("Se actualizo con exito")
-        })
+    const [emailError, setEmailError] = useState<string>('');
+    const [telefonoError, setTelefonoError] = useState<string>('');
+
+    const registrar = () => {
+    
+    if (nombre && apellido && email && telefono && tipoEvento && fechaEvento && metodoContacto && detalles) {
+      console.log("Nombre:",nombre);
+      console.log("Apellido:",apellido);
+      console.log("Correo electrónico:", email);
+      console.log("Número de teléfono:", telefono);
+      console.log("Tipo de evento:", tipoEvento);
+      console.log("Fecha del evento:", fechaEvento);
+      console.log("Método de contacto:", metodoContacto);
+      console.log("Detalles adicionales:",detalles);
+
+      if (!validacionEmail(email)) {
+        alert('El email debe tener este formato "..@gmail.com"');
+        return;
+      }
+      if (!validacionTelefono(telefono)) {
+        alert('El teléfono debe contener solo números');
+        return;
+      }
+    
+
+
+      const e:Evento={
+        nombre,
+        apellido,
+        email,
+        telefono,
+        tipoEvento,
+        fechaEvento,
+        metodoContacto,
+        detalles
+      };
+      registrarEvento(e);
+      alert("Registro exitoso");
+    } else{
+        alert("Debes completar todos los campos")
     }
+}
 
-    return (
+  const validacionEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  const validacionTelefono = (phoneNumber: string) => {
+    const phoneRegex = /^[0-9]+$/;
+    return phoneRegex.test(phoneNumber);
+  };
+
+
+  return (
     <form className='form'>
         <label>Nombre:</label><br/>
         <input type="text" required 
@@ -68,13 +85,13 @@ export const Actualizar = () => {
         <input type="email" required 
             onChange={(e)=>setEmail(e.target.value)}
             value={email}/>
-        
+        {emailError && <div className="error">{emailError}</div>}
         
         <label>Telefono:</label><br/>
         <input type="tel" required 
             onChange={(e)=>setTelefono(e.target.value)}
             value={telefono}/>
-        
+        {telefonoError && <div className="error">{telefonoError}</div>}
         
         <label>Tipo de evento:</label>
         <select name="tipoEvento" required 
@@ -108,8 +125,11 @@ export const Actualizar = () => {
         <textarea rows={5} required 
         onChange={(e) => setDetalles(e.target.value)}
         value={detalles}></textarea>
+        
 
-        <button className='btn' onClick={actualizar} type="button">Actualizar</button>
+        <button className='btn' onClick={registrar} type="button">Registrar</button>
     </form>
   )
 }
+
+export default Contacto;

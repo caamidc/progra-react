@@ -1,6 +1,7 @@
-import { Evento } from "../Interfaces";
+import { Evento } from "@/app/Interfaces";
 import { collection, addDoc, getDocs, doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore"; 
-import { db } from "./Conexion";
+import { db } from "@/Firebase/Conexion";
+
 
 export const registrarEvento = async(e:Evento)=>{
     const docRef = await addDoc(collection(db, "eventos"),e);
@@ -57,3 +58,4 @@ export const actualizarEvento = async(idEvento:string,e:Evento)=>{
 export const eliminarEvento = async(idEvento:string)=>{
     await deleteDoc(doc(db,"eventos",idEvento));
 }
+

@@ -24,3 +24,4 @@ export const AcercaDe = () => {
     </div>
   )
 }
+export default AcercaDe;

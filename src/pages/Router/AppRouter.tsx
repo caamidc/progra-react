@@ -1,15 +1,14 @@
 'use client'
-'use client'
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Componente1 } from '../Componentes/Componente1';
-import { Registros } from '../Componentes/Registros';
-import { Contacto } from '../Componentes/Contacto';
-import { Galeria } from '../Componentes/Galeria';
-import { AcercaDe } from '../Componentes/AcercaDe';
-import { Servicios } from '../Componentes/Servicios';
-import { Actualizar } from '../Componentes/Actualizar';
-import { Eliminar } from '../Componentes/Eliminar';
+import { Componente1 } from '@/pages/Componentes/Componente1';
+import { Registros } from '@/pages/Componentes/Registros';
+import { Contacto } from '@/pages/Componentes/Contacto';
+import { Galeria } from '@/pages/Componentes/Galeria';
+import { AcercaDe } from '@/pages/Componentes/AcercaDe';
+import { Servicios } from '@/pages/Componentes/Servicios';
+import { Actualizar } from '@/pages/Componentes/Actualizar';
+import { Eliminar } from '@/pages/Componentes/Eliminar';
 
 export const AppRouter = () => {
   return (
@@ -26,3 +25,5 @@ export const AppRouter = () => {
     </Routes>
   );
 };
+
+export default AppRouter;

@@ -19,3 +19,5 @@ export const Componente1 = (props:Props) => {
     </div>
   )
 }
+
+export default Componente1;

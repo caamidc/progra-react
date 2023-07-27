@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { obtenerEventos } from '../Firebase/Promesas'
-import { Evento } from '../Interfaces'
+import { obtenerEventos } from '@/Firebase/Promesas'
 import '../assets/css/Registros.css'
 import { Link } from 'react-router-dom'
+import { Evento } from '@/app/Interfaces'
 
 export const Registros = () => {
     const [eventos,setEventos] = useState<Evento[]>([])
@@ -55,3 +55,4 @@ export const Registros = () => {
         </table>
   )
 }
+export default Registros;
