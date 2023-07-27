@@ -30,7 +30,7 @@ export const Contacto = () => {
       console.log("Detalles adicionales:",detalles);
 
       if (!validacionEmail(email)) {
-        alert('El email debe tener este formato "..@gmail.com"');
+        alert('El email debe tener este formato "..@gmail.com" "..@hotmail.com", etc');
         return;
       }
       if (!validacionTelefono(telefono)) {
