@@ -1,0 +1,44 @@
+/* Estilos para el encabezado */
+#home {
+    background-image: url('https://z-p3-scontent.flsc2-1.fna.fbcdn.net/v/t39.30808-6/319045568_560943926042369_8183974657477045144_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGehWKfuxIN15vX3DdXZq-_u6nCf3NpqnS7qcJ_c2mqdEcl-pIeF1xWw-aV8v7yXBzeYXAb4rarKEkjsgY2qbsR&_nc_ohc=t2WnIV7ykGUAX9hUekf&_nc_zt=23&_nc_ht=z-p3-scontent.flsc2-1.fna&oh=00_AfByyO_v4MVTXdRGFG0T3SD1NTJ_3VNwJQZPenpO3AycSw&oe=64C33614');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+  }
+  
+  #home h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  #home p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+  
+  #home a {
+    font-size: 1.2rem;
+    padding: 10px 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: #ff8c00;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #home a:hover {
+    background-color: #fff;
+    color: #ff8c00;
+  }
+  

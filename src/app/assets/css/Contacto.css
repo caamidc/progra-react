@@ -1,0 +1,82 @@
+/* Estilos para el formulario */
+form {
+    background-color: #000000;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+  
+  /* Estilos para las etiquetas */
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  /* Estilos para los campos de entrada */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #a39e9e;
+  }
+  
+  /* Estilos para los botones */
+  button {
+    background-color: #a39e9e;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+
+  /* Estilos para la clase form-radio */
+  .form-radio {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilos para los botones radio dentro de form-radio */
+  .form-radio input[type="radio"] {
+    margin-right: 8px;
+  }
+  
+  /* Estilos para el mensaje de error */
+  .error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Estilos para el mensaje de éxito */
+  .success-message {
+    color: #00cc00;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  

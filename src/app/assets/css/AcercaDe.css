@@ -1,0 +1,51 @@
+/* Estilos para el contenedor */
+.container {
+  max-width: 1200px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centrar el contenido horizontalmente */
+  padding: 20px; /* Espaciado en los lados */
+}
+
+/* Estilos para la clase row */
+.row {
+  display: flex; /* Display flex para alinear los elementos en la misma línea */
+  flex-wrap: wrap; /* Permitir que los elementos se ajusten en múltiples filas */
+  margin: 0 -10px; /* Espaciado negativo para compensar el padding de las columnas */
+}
+
+/* Estilos para la clase col-md-6 */
+.col-md-6 {
+  flex: 0 0 50%; /* Ocupar 50% del ancho disponible (dos columnas en una fila) */
+  max-width: 50%; /* Máximo 50% del ancho disponible (dos columnas en una fila) */
+  padding: 0 10px; /* Espaciado en los lados */
+}
+
+/* Estilos para la sección "Acerca de nosotros" */
+#about {
+  background-color: #f9f9f9;
+  padding: 100px 0;
+  text-align: center; /* Centrar el contenido del contenedor */
+}
+
+#about h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px #000;
+}
+
+#about p {
+  font-size: 1.5rem;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  margin-bottom: 30px; /* Espaciado entre el contenido y la imagen */
+}
+
+.about-image img {
+  border-radius: 50%;
+  box-shadow: 2px 2px 10px #000;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
