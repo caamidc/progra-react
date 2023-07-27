@@ -31,7 +31,7 @@ export const Eliminar = () => {
                 }
             })//se recupera el objeto en base a un id  
         }
-    },[])
+    },[params.idEvento])
 
     const eliminarContacto = () => {
         const e:Evento={

@@ -8,8 +8,9 @@ export const Registros = () => {
     const [eventos,setEventos] = useState<Evento[]>([])
 
     const redenrizarDatos = ()=>{
-        var elementos = eventos.map((e)=>{
-            return <tr>
+        var elementos = eventos.map((e,index)=>{
+            return (
+                <tr key={index}>
                 <td>{e.nombre}</td>
                 <td>{e.apellido}</td>
                 <td>{e.email}</td>
@@ -21,7 +22,7 @@ export const Registros = () => {
                 <td><Link to={"/actualizar/"+e.idEvento}>Actualizar</Link></td>
                 <td><Link to={"/eliminar/"+e.idEvento}>Eliminar</Link></td>
             </tr>
-        })
+        )})
         return elementos
     }
     useEffect(()=>{

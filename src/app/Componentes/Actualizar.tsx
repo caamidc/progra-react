@@ -31,7 +31,7 @@ export const Actualizar = () => {
                 }
             })//se recupera el objeto en base a un id  
         }
-    },[])
+    },[params.idEvento])
    
 
     const actualizar = () => {
