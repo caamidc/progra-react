@@ -1,6 +1,7 @@
 import { Evento } from "@/app/Interfaces";
 import { collection, addDoc, getDocs, doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore"; 
-import { db } from "@/Firebase/Conexion";
+import { db } from "./Conexion";
+
 
 
 export const registrarEvento = async(e:Evento)=>{
